@@ -38,7 +38,7 @@ export function EditorActions({
         </button>
         <button
           type="button"
-          className={mode === "preview" ? "active" : ""}
+          className={`preview-mode${mode === "preview" ? " active" : ""}`}
           disabled={!hasImage || isExporting}
           onClick={() => onSetMode("preview")}
           aria-pressed={mode === "preview"}
@@ -50,7 +50,7 @@ export function EditorActions({
 
       <button
         type="button"
-        className="button primary"
+        className="button export-secondary"
         disabled={!hasImage || isExporting}
         onClick={onExport}
       >

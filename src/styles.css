@@ -254,6 +254,17 @@ button {
   background: #44e0bd;
 }
 
+.button.export-secondary {
+  border-color: transparent;
+  background: #edf4f1;
+  color: #17211f;
+  font-weight: 720;
+}
+
+.button.export-secondary:hover:not(:disabled) {
+  background: #ffffff;
+}
+
 .button.danger {
   color: #ffd9d9;
 }
@@ -287,6 +298,17 @@ input:disabled {
 .tool-toggle button.active {
   background: #edf4f1;
   color: #17211f;
+}
+
+.editor-actions .segmented button.preview-mode {
+  border-color: transparent;
+  background: #2ad3ad;
+  color: #09231c;
+  font-weight: 720;
+}
+
+.editor-actions .segmented button.preview-mode:hover:not(:disabled) {
+  background: #44e0bd;
 }
 
 .main-layout {
@@ -837,7 +859,7 @@ progress {
     order: 3;
   }
 
-  .editor-actions .button.primary {
+  .editor-actions .button.export-secondary {
     order: 2;
   }
 
