@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="#2ad3ad" />
+    <meta name="msapplication-TileColor" content="#2ad3ad" />
+    <meta name="msapplication-TileImage" content="/mstile-150x150.png" />
+    <meta
+      name="description"
+      content="Learn what purupurumaker is, how the purupuru wobble effect works, and when to use this free browser image wobble maker."
+    />
+    <link rel="canonical" href="https://purupurumaker.pro/what-is-purupuru-maker/" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" href="/favicon-48x48.png" sizes="48x48" />
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://purupurumaker.pro/what-is-purupuru-maker/" />
+    <meta property="og:title" content="What is purupurumaker?" />
+    <meta
+      property="og:description"
+      content="A clear explanation of purupurumaker, the browser-based image wobble maker for soft jelly-style animations."
+    />
+    <meta property="og:image" content="https://purupurumaker.pro/purupurumaker-og-image.png" />
+    <meta property="og:image:alt" content="purupurumaker browser image wobble maker" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="What is purupurumaker?" />
+    <meta
+      name="twitter:description"
+      content="Learn what purupurumaker does, how the wobble effect works, and what images work best."
+    />
+    <meta name="twitter:image" content="https://purupurumaker.pro/purupurumaker-og-image.png" />
+    <title>What is purupurumaker? - Image Wobble Maker FAQ</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "What is purupurumaker?",
+        "description": "Learn what purupurumaker is, how the purupuru wobble effect works, and when to use this free browser image wobble maker.",
+        "image": "https://purupurumaker.pro/purupurumaker-og-image.png",
+        "author": {
+          "@type": "Organization",
+          "name": "purupurumaker"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "purupurumaker",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://purupurumaker.pro/icon-512.png"
+          }
+        },
+        "mainEntityOfPage": "https://purupurumaker.pro/what-is-purupuru-maker/",
+        "dateModified": "2026-07-17"
+      }
+    </script>
+    <style>
+      :root {
+        color-scheme: dark;
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        background: #111414;
+        color: #edf4f1;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 34%),
+          #111414;
+        color: #edf4f1;
+      }
+
+      a {
+        color: #2ad3ad;
+        font-weight: 700;
+      }
+
+      .page-header {
+        background: #111414;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+      }
+
+      .page-nav {
+        display: grid;
+        grid-template-columns: auto minmax(260px, 1fr) auto;
+        align-items: center;
+        gap: 8px;
+        width: 100%;
+        min-height: 68px;
+        margin: 0;
+        padding: 0 18px;
+        box-sizing: border-box;
+      }
+
+      .page-brand {
+        grid-column: 1;
+        gap: 12px;
+        padding: 0;
+        color: #edf4f1 !important;
+        font-size: 18px;
+        font-weight: 760;
+      }
+
+      .page-brand:hover {
+        background: transparent !important;
+      }
+
+      .page-brand-mark {
+        display: block;
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        object-fit: contain;
+      }
+
+      .page-links {
+        grid-column: 2;
+        justify-self: start;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        margin-left: clamp(48px, 8vw, 126px);
+      }
+
+      .page-nav a,
+      .page-nav button {
+        display: inline-flex;
+        align-items: center;
+        min-height: 36px;
+        border: 0;
+        border-radius: 8px;
+        padding: 0 12px;
+        background: transparent;
+        color: #dce9e5;
+        font: inherit;
+        font-size: 14px;
+        font-weight: 700;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+
+      .page-nav button {
+        cursor: pointer;
+      }
+
+      .page-nav a:hover,
+      .page-dropdown:hover > button,
+      .page-dropdown:focus-within > button,
+      .page-nav .active {
+        background: rgba(255, 255, 255, 0.14);
+        color: #ffffff;
+      }
+
+      .page-dropdown {
+        position: relative;
+      }
+
+      .page-dropdown::after {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 9;
+        width: max(100%, 230px);
+        height: 10px;
+        content: "";
+      }
+
+      .page-menu {
+        position: absolute;
+        top: calc(100% + 8px);
+        left: 0;
+        z-index: 10;
+        display: grid;
+        min-width: 230px;
+        padding: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 8px;
+        background: #161b1b;
+        box-shadow: 0 18px 50px rgba(0, 0, 0, 0.32);
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-4px);
+      }
+
+      .page-dropdown:hover .page-menu,
+      .page-dropdown:focus-within .page-menu {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+
+      .page-menu a {
+        color: #cfe2dc;
+        white-space: normal;
+      }
+
+      main {
+        width: min(820px, calc(100% - 40px));
+        margin: 0 auto;
+        padding: 56px 0;
+      }
+
+      h1 {
+        margin: 0 0 18px;
+        color: #edf4f1;
+        font-size: 42px;
+        letter-spacing: 0;
+      }
+
+      h2 {
+        margin: 34px 0 10px;
+        color: #edf4f1;
+        font-size: 22px;
+        letter-spacing: 0;
+      }
+
+      p,
+      li {
+        color: #b5c5c0;
+        line-height: 1.7;
+      }
+
+      ul {
+        margin: 10px 0 0;
+        padding-left: 22px;
+      }
+
+      @media (max-width: 760px) {
+        .page-nav {
+          display: flex;
+          align-items: stretch;
+          flex-direction: column;
+          padding: 12px;
+        }
+
+        .page-links {
+          justify-self: start;
+          flex-wrap: wrap;
+        }
+
+        .page-menu {
+          min-width: min(280px, calc(100vw - 36px));
+        }
+
+        main {
+          width: min(100% - 28px, 680px);
+          padding: 42px 0 54px;
+        }
+
+        h1 {
+          font-size: 34px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="page-header">
+      <nav class="page-nav" aria-label="Primary navigation">
+        <a class="page-brand" href="/" aria-label="purupuru maker start">
+          <img
+            class="page-brand-mark"
+            src="/purupurumaker-wobble-maker-icon.png"
+            alt="purupuru maker wobble maker icon"
+          />
+          <span>purupuru maker</span>
+        </a>
+        <div class="page-links">
+          <a href="/">Start</a>
+          <div class="page-dropdown">
+            <button class="active" type="button" aria-haspopup="true">FAQ</button>
+            <div class="page-menu" role="menu">
+              <a href="/what-is-purupuru-maker/" role="menuitem">What is purupuru maker?</a>
+              <a href="/how-to-use-purupuru-maker/" role="menuitem">How to use purupuru maker?</a>
+              <a href="/are-my-images-uploaded/" role="menuitem">Are my images uploaded?</a>
+            </div>
+          </div>
+          <div class="page-dropdown">
+            <button type="button" aria-haspopup="true">Terms</button>
+            <div class="page-menu" role="menu">
+              <a href="/terms.html" role="menuitem">Terms</a>
+              <a href="/privacy.html" role="menuitem">Privacy</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <h1>What is purupurumaker?</h1>
+      <p>
+        purupurumaker is a free browser-based image wobble maker that turns a still image into a soft,
+        jelly-like wobble animation. This independent browser tool is inspired by
+        the bouncy effect often used for character art, avatars, stickers, memes,
+        and light image edits.
+      </p>
+
+      <h2>Where the idea comes from</h2>
+      <p>
+        The word purupuru describes a trembling or jiggling motion. In image
+        editing, the idea is to make selected parts of a still picture gently
+        bounce while the rest of the image stays more stable.
+      </p>
+
+      <h2>What purupurumaker does</h2>
+      <p>
+        The tool combines three steps in one page: upload an image, paint a motion
+        mask over the parts that should move, and preview the wobble before export.
+        This matches the way creators usually think about the effect: protect the
+        stable base of the picture, then add motion only to flexible details.
+      </p>
+
+      <h2>Main features</h2>
+      <ul>
+        <li>Upload a PNG, JPEG, or WebP image directly in the browser.</li>
+        <li>Paint a motion mask over the areas that should wobble.</li>
+        <li>Choose brush thickness for precise edges or faster broad strokes.</li>
+        <li>Adjust strength, speed, spring, and damping for the wobble style.</li>
+        <li>Preview the motion in real time and export a short MP4 video or GIF.</li>
+      </ul>
+
+      <h2>Main workflow</h2>
+      <p>
+        The basic workflow is simple: keep the important base of the image
+        steady, paint flexible details like hair, ribbons, sleeves, ears,
+        stickers, or accessories, then tune the motion until it feels bouncy
+        without looking distorted.
+      </p>
+
+      <h2>When to use it</h2>
+      <p>
+        purupurumaker is useful when you want a quick animated sticker, a subtle
+        avatar movement, a playful meme, or a soft product-image motion without
+        installing desktop animation software. For detailed steps, see
+        <a href="/how-to-use-purupuru-maker/">how to use purupuru maker</a>.
+      </p>
+
+      <h2>Privacy note</h2>
+      <p>
+        The editor is designed to process your selected file locally in the
+        browser. For more detail, read
+        <a href="/are-my-images-uploaded/">whether images are uploaded to purupurumaker</a>.
+      </p>
+    </main>
+  </body>
+</html>

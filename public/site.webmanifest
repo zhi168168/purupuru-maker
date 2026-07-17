@@ -1,0 +1,24 @@
+{
+  "name": "purupurumaker",
+  "short_name": "purupurumaker",
+  "description": "A free browser-based image wobble maker for creating soft jelly animations from still images.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f7fcf9",
+  "theme_color": "#2ad3ad",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

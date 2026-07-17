@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="#2ad3ad" />
+    <meta name="msapplication-TileColor" content="#2ad3ad" />
+    <meta name="msapplication-TileImage" content="/mstile-150x150.png" />
+    <meta
+      name="description"
+      content="Learn how to use purupurumaker: upload an image, paint motion areas, preview wobble settings, and export MP4 or GIF locally."
+    />
+    <link rel="canonical" href="https://purupurumaker.pro/how-to-use-purupuru-maker/" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" href="/favicon-48x48.png" sizes="48x48" />
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://purupurumaker.pro/how-to-use-purupuru-maker/" />
+    <meta property="og:title" content="How to use purupurumaker" />
+    <meta
+      property="og:description"
+      content="A step-by-step guide to making purupuru-style image wobble animations in your browser."
+    />
+    <meta property="og:image" content="https://purupurumaker.pro/purupurumaker-og-image.png" />
+    <meta property="og:image:alt" content="purupurumaker image wobble tutorial" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to use purupurumaker" />
+    <meta
+      name="twitter:description"
+      content="Upload an image, paint motion areas, tune wobble settings, and export MP4 or GIF."
+    />
+    <meta name="twitter:image" content="https://purupurumaker.pro/purupurumaker-og-image.png" />
+    <title>How to use purupurumaker - Image Wobble Tutorial</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "How to use purupurumaker",
+        "description": "Upload an image, paint motion areas, preview wobble settings, and export MP4 or GIF locally.",
+        "image": "https://purupurumaker.pro/purupurumaker-og-image.png",
+        "totalTime": "PT2M",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "Upload an image",
+            "text": "Open purupurumaker and upload a PNG, JPEG, or WebP image."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Paint the moving area",
+            "text": "Brush over the parts that should wobble while leaving stable areas unpainted."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Preview and tune the wobble",
+            "text": "Adjust strength, speed, spring, and damping until the motion looks natural."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Export the animation",
+            "text": "Export the result as an MP4 video or GIF animation when your browser supports the format."
+          }
+        ]
+      }
+    </script>
+    <style>
+      :root {
+        color-scheme: light;
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        background: #f4f7f5;
+        color: #14211d;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      main {
+        width: min(820px, calc(100% - 40px));
+        margin: 0 auto;
+        padding: 56px 0;
+      }
+
+      a {
+        color: #1f6957;
+        font-weight: 700;
+      }
+
+      .page-header {
+        background: #111414;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+      }
+
+      .page-nav {
+        display: grid;
+        grid-template-columns: auto minmax(260px, 1fr) auto;
+        align-items: center;
+        gap: 8px;
+        width: 100%;
+        min-height: 68px;
+        margin: 0;
+        padding: 0 18px;
+        box-sizing: border-box;
+      }
+
+      .page-brand {
+        grid-column: 1;
+        gap: 12px;
+        padding: 0;
+        color: #edf4f1 !important;
+        font-size: 18px;
+        font-weight: 760;
+      }
+
+      .page-brand:hover {
+        background: transparent !important;
+      }
+
+      .page-brand-mark {
+        display: block;
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        object-fit: contain;
+      }
+
+      .page-links {
+        grid-column: 2;
+        justify-self: start;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        margin-left: clamp(48px, 8vw, 126px);
+      }
+
+      .page-nav a,
+      .page-nav button {
+        display: inline-flex;
+        align-items: center;
+        min-height: 36px;
+        border: 0;
+        border-radius: 8px;
+        padding: 0 12px;
+        background: transparent;
+        color: #dce9e5;
+        font: inherit;
+        font-size: 14px;
+        font-weight: 700;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+
+      .page-nav button {
+        cursor: pointer;
+      }
+
+      .page-nav a:hover,
+      .page-dropdown:hover > button,
+      .page-dropdown:focus-within > button,
+      .page-nav .active {
+        background: rgba(255, 255, 255, 0.14);
+        color: #ffffff;
+      }
+
+      .page-dropdown {
+        position: relative;
+      }
+
+      .page-dropdown::after {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 9;
+        width: max(100%, 230px);
+        height: 10px;
+        content: "";
+      }
+
+      .page-menu {
+        position: absolute;
+        top: calc(100% + 8px);
+        left: 0;
+        z-index: 10;
+        display: grid;
+        min-width: 230px;
+        padding: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 8px;
+        background: #161b1b;
+        box-shadow: 0 18px 50px rgba(0, 0, 0, 0.32);
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-4px);
+      }
+
+      .page-dropdown:hover .page-menu,
+      .page-dropdown:focus-within .page-menu {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+
+      .page-menu a {
+        color: #cfe2dc;
+        white-space: normal;
+      }
+
+      h1 {
+        margin: 0 0 18px;
+        font-size: 42px;
+        letter-spacing: 0;
+      }
+
+      h2 {
+        margin: 34px 0 10px;
+        font-size: 22px;
+        letter-spacing: 0;
+      }
+
+      p,
+      li {
+        color: #42524d;
+        line-height: 1.7;
+      }
+
+      :root {
+        background: #111414;
+        color: #edf4f1;
+      }
+
+      body {
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 34%),
+          #111414;
+        color: #edf4f1;
+      }
+
+      h1,
+      h2 {
+        color: #edf4f1;
+      }
+
+      p,
+      li {
+        color: #b5c5c0;
+      }
+
+      main a {
+        color: #2ad3ad;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="page-header">
+      <nav class="page-nav" aria-label="Primary navigation">
+        <a class="page-brand" href="/" aria-label="purupuru maker start">
+          <img
+            class="page-brand-mark"
+            src="/purupurumaker-wobble-maker-icon.png"
+            alt="purupuru maker wobble maker icon"
+          />
+          <span>purupuru maker</span>
+        </a>
+        <div class="page-links">
+          <a href="/">Start</a>
+          <div class="page-dropdown">
+            <button class="active" type="button" aria-haspopup="true">FAQ</button>
+            <div class="page-menu" role="menu">
+              <a href="/what-is-purupuru-maker/" role="menuitem">What is purupuru maker?</a>
+              <a href="/how-to-use-purupuru-maker/" role="menuitem">How to use purupuru maker?</a>
+              <a href="/are-my-images-uploaded/" role="menuitem">Are my images uploaded?</a>
+            </div>
+          </div>
+          <div class="page-dropdown">
+            <button type="button" aria-haspopup="true">Terms</button>
+            <div class="page-menu" role="menu">
+              <a href="/terms.html" role="menuitem">Terms</a>
+              <a href="/privacy.html" role="menuitem">Privacy</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <h1>How to use purupurumaker</h1>
+      <p>
+        Use purupurumaker to turn a still image into a purupuru-style wobble
+        animation directly in your browser. The basic flow is upload, set the
+        brush, paint the movable parts, preview the wobble, and export.
+      </p>
+      <h2>1. Upload an image</h2>
+      <p>
+        Open the <a href="/">purupurumaker editor</a> and upload a PNG, JPEG, or WebP image. Character art,
+        stickers, avatars, and images with clear soft details usually work best.
+        If the image has a transparent background, keep it as PNG so the exported
+        animation preserves the clean edges.
+      </p>
+      <h2>2. Choose brush thickness</h2>
+      <p>
+        Use the brush-size control to choose how wide your strokes should be. A
+        thinner brush gives more precise edges, while a thicker brush is faster
+        for large hair, clothing, or sticker areas.
+      </p>
+      <h2>3. Paint the moving area</h2>
+      <p>
+        Use Paint mode to brush over the parts that should move. Hair, ribbons,
+        sleeves, ears, stickers, and soft character details usually work best.
+        Unpainted areas stay steadier.
+      </p>
+      <p>
+        Avoid painting the whole image unless you intentionally want everything to
+        move. Selective masks usually create a cleaner purupuru effect because the
+        viewer can compare the moving details against a stable base.
+      </p>
+      <h2>4. Preview the wobble</h2>
+      <p>
+        Switch to Preview mode and tune the strength, speed, spring, and damping
+        controls. A small amount of motion often looks cleaner than pushing every
+        slider to the maximum.
+      </p>
+      <h2>5. Fix common issues</h2>
+      <p>
+        If the motion looks too rubbery, reduce strength or increase damping. If
+        the image barely moves, paint a larger mask area or increase strength a
+        little. If edges look unstable, repaint the mask with a smaller brush.
+      </p>
+      <h2>6. Export the animation</h2>
+      <p>
+        When the motion feels right, export the result as an MP4 video or GIF. Chrome and
+        Edge usually provide the smoothest export support for browser canvas
+        recording.
+      </p>
+      <h2>Privacy while editing</h2>
+      <p>
+        The selected file is processed locally by the browser APIs used for image
+        loading, canvas preview, and export. Learn more in
+        <a href="/are-my-images-uploaded/">Are my images uploaded?</a>
+      </p>
+    </main>
+  </body>
+</html>

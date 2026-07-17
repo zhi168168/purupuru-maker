@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="#2ad3ad" />
+    <meta name="msapplication-TileColor" content="#2ad3ad" />
+    <meta name="msapplication-TileImage" content="/mstile-150x150.png" />
+    <meta
+      name="description"
+      content="Terms of use for purupurumaker, an independent browser-based image wobble maker."
+    />
+    <link rel="canonical" href="https://purupurumaker.pro/terms.html" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" href="/favicon-48x48.png" sizes="48x48" />
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://purupurumaker.pro/terms.html" />
+    <meta property="og:title" content="Terms of Use - purupurumaker" />
+    <meta
+      property="og:description"
+      content="Terms for using purupurumaker, including content rights, acceptable use, browser support, and contact details."
+    />
+    <meta property="og:image" content="https://purupurumaker.pro/purupurumaker-og-image.png" />
+    <meta property="og:image:alt" content="purupurumaker browser image wobble maker" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Terms of Use - purupurumaker" />
+    <meta
+      name="twitter:description"
+      content="Terms for using purupurumaker, including content rights, acceptable use, browser support, and contact details."
+    />
+    <meta name="twitter:image" content="https://purupurumaker.pro/purupurumaker-og-image.png" />
+    <title>Terms of Use - purupurumaker</title>
+    <style>
+      :root {
+        color-scheme: light;
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        background: #f4f7f5;
+        color: #14211d;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      main {
+        width: min(820px, calc(100% - 40px));
+        margin: 0 auto;
+        padding: 56px 0;
+      }
+
+      a {
+        color: #1f6957;
+        font-weight: 700;
+      }
+
+      .page-header {
+        background: #111414;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+      }
+
+      .page-nav {
+        display: grid;
+        grid-template-columns: auto minmax(260px, 1fr) auto;
+        align-items: center;
+        gap: 8px;
+        width: 100%;
+        min-height: 68px;
+        margin: 0;
+        padding: 0 18px;
+        box-sizing: border-box;
+      }
+
+      .page-brand {
+        grid-column: 1;
+        gap: 12px;
+        padding: 0;
+        color: #edf4f1 !important;
+        font-size: 18px;
+        font-weight: 760;
+      }
+
+      .page-brand:hover {
+        background: transparent !important;
+      }
+
+      .page-brand-mark {
+        display: block;
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        object-fit: contain;
+      }
+
+      .page-links {
+        grid-column: 2;
+        justify-self: start;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        margin-left: clamp(48px, 8vw, 126px);
+      }
+
+      .page-nav a,
+      .page-nav button {
+        display: inline-flex;
+        align-items: center;
+        min-height: 36px;
+        border: 0;
+        border-radius: 8px;
+        padding: 0 12px;
+        background: transparent;
+        color: #dce9e5;
+        font: inherit;
+        font-size: 14px;
+        font-weight: 700;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+
+      .page-nav button {
+        cursor: pointer;
+      }
+
+      .page-nav a:hover,
+      .page-dropdown:hover > button,
+      .page-dropdown:focus-within > button,
+      .page-nav .active {
+        background: rgba(255, 255, 255, 0.14);
+        color: #ffffff;
+      }
+
+      .page-dropdown {
+        position: relative;
+      }
+
+      .page-dropdown::after {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 9;
+        width: max(100%, 230px);
+        height: 10px;
+        content: "";
+      }
+
+      .page-menu {
+        position: absolute;
+        top: calc(100% + 8px);
+        left: 0;
+        z-index: 10;
+        display: grid;
+        min-width: 230px;
+        padding: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 8px;
+        background: #161b1b;
+        box-shadow: 0 18px 50px rgba(0, 0, 0, 0.32);
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-4px);
+      }
+
+      .page-dropdown:hover .page-menu,
+      .page-dropdown:focus-within .page-menu {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+
+      .page-menu a {
+        color: #cfe2dc;
+        white-space: normal;
+      }
+
+      h1 {
+        margin: 0 0 18px;
+        font-size: 42px;
+        letter-spacing: 0;
+      }
+
+      h2 {
+        margin: 34px 0 10px;
+        font-size: 22px;
+        letter-spacing: 0;
+      }
+
+      p,
+      li {
+        color: #42524d;
+        line-height: 1.7;
+      }
+
+      nav {
+        margin-bottom: 34px;
+      }
+
+      :root {
+        background: #111414;
+        color: #edf4f1;
+      }
+
+      body {
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 34%),
+          #111414;
+        color: #edf4f1;
+      }
+
+      h1,
+      h2 {
+        color: #edf4f1;
+      }
+
+      p,
+      li {
+        color: #b5c5c0;
+      }
+
+      main a {
+        color: #2ad3ad;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="page-header">
+      <nav class="page-nav" aria-label="Primary navigation">
+        <a class="page-brand" href="/" aria-label="purupuru maker start">
+          <img
+            class="page-brand-mark"
+            src="/purupurumaker-wobble-maker-icon.png"
+            alt="purupuru maker wobble maker icon"
+          />
+          <span>purupuru maker</span>
+        </a>
+        <div class="page-links">
+          <a href="/">Start</a>
+          <div class="page-dropdown">
+            <button type="button" aria-haspopup="true">FAQ</button>
+            <div class="page-menu" role="menu">
+              <a href="/what-is-purupuru-maker/" role="menuitem">What is purupuru maker?</a>
+              <a href="/how-to-use-purupuru-maker/" role="menuitem">How to use purupuru maker?</a>
+              <a href="/are-my-images-uploaded/" role="menuitem">Are my images uploaded?</a>
+            </div>
+          </div>
+          <div class="page-dropdown">
+            <button class="active" type="button" aria-haspopup="true">Terms</button>
+            <div class="page-menu" role="menu">
+              <a href="/terms.html" role="menuitem">Terms</a>
+              <a href="/privacy.html" role="menuitem">Privacy</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <h1>Terms of Use</h1>
+      <p>Last updated: July 17, 2026</p>
+
+      <h2>Use of the tool</h2>
+      <p>
+        purupurumaker is provided as a browser-based image wobble animation editor.
+        You may use it to upload images, paint motion masks, preview animation, and
+        export MP4 videos or GIFs when your browser supports the required features.
+      </p>
+
+      <h2>Your content</h2>
+      <p>
+        You keep the rights you already have in the images and videos you create.
+        You are responsible for making sure you have the rights and permissions
+        needed to edit, export, publish, or share any content you use with the app.
+      </p>
+
+      <h2>Acceptable use</h2>
+      <p>
+        Do not use purupurumaker to create, process, or distribute content that
+        violates applicable law, infringes another person's rights, or attempts to
+        abuse, disrupt, or reverse engineer the service.
+      </p>
+
+      <h2>No affiliation</h2>
+      <p>
+        purupurumaker is an independent tool. It is not endorsed by or affiliated
+        with any other image animation product unless a separate written agreement
+        says otherwise.
+      </p>
+
+      <h2>Availability and export support</h2>
+      <p>
+        Browser support varies. Features such as WebGL rendering and MP4/GIF export
+        depend on your device and browser. The tool is provided without a guarantee
+        that every browser, file, image size, or export workflow will work.
+      </p>
+
+      <h2>Disclaimer</h2>
+      <p>
+        purupurumaker is provided "as is" and "as available" without warranties of
+        any kind to the fullest extent permitted by law.
+      </p>
+
+      <h2>Changes</h2>
+      <p>
+        These terms may be updated as the product changes. The date above will be
+        updated when material changes are made.
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        For questions, reports, or requests about these terms, contact us at
+        <a href="mailto:report@purupurumaker.pro">report@purupurumaker.pro</a>.
+      </p>
+    </main>
+  </body>
+</html>
