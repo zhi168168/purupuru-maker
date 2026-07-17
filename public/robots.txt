@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://purupurumaker.pro/sitemap.xml
+Sitemap: https://www.purupurumaker.pro/sitemap.xml
