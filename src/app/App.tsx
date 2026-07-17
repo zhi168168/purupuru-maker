@@ -320,19 +320,19 @@ type FaqPageContent = {
 
 const faqPages: Record<string, FaqPageContent> = {
   "/what-is-purupuru-maker": {
-    title: "What is purupurumaker?",
+    title: "What is purupuru maker?",
     description:
-      "purupurumaker is a free browser-based image wobble maker for creating soft purupuru-style animations from still pictures.",
+      "purupuru maker is a free browser-based image wobble maker for creating soft purupuru-style animations from still pictures.",
     sections: [
       {
         title: "Where the idea comes from",
         body:
-          "The name comes from the purupuru-style wobble effect often used in Japanese web culture, character art, avatars, stickers, memes, and soft image edits. purupurumaker is an independent browser-based tool inspired by that effect.",
+          "The name comes from the purupuru-style wobble effect often used in Japanese web culture, character art, avatars, stickers, memes, and soft image edits. purupuru maker is an independent browser-based tool inspired by that effect.",
       },
       {
         title: "Main features",
         body:
-          "purupurumaker lets you upload a PNG, JPEG, or WebP image, paint a motion mask over the parts that should move, adjust the wobble strength and timing, preview the result in real time, and export a short MP4 or GIF animation.",
+          "purupuru maker lets you upload a PNG, JPEG, or WebP image, paint a motion mask over the parts that should move, adjust the wobble strength and timing, preview the result in real time, and export a short MP4 or GIF animation.",
       },
       {
         title: "Main workflow",
@@ -342,14 +342,14 @@ const faqPages: Record<string, FaqPageContent> = {
     ],
   },
   "/how-to-use-purupuru-maker": {
-    title: "How to use purupurumaker",
+    title: "How to use purupuru maker",
     description:
-      "Use purupurumaker to turn a still image into a purupuru-style wobble animation directly in your browser.",
+      "Use purupuru maker to turn a still image into a purupuru-style wobble animation directly in your browser.",
     sections: [
       {
         title: "1. Upload an image",
         body:
-          "Start on the editor screen and upload a PNG, JPEG, or WebP image. Character art, stickers, avatars, and images with clear soft details usually work best in purupurumaker.",
+          "Start on the editor screen and upload a PNG, JPEG, or WebP image. Character art, stickers, avatars, and images with clear soft details usually work best in purupuru maker.",
       },
       {
         title: "2. Choose brush thickness",
@@ -374,9 +374,9 @@ const faqPages: Record<string, FaqPageContent> = {
     ],
   },
   "/are-my-images-uploaded": {
-    title: "Are my images uploaded to purupurumaker?",
+    title: "Are my images uploaded to purupuru maker?",
     description:
-      "purupurumaker processes uploaded images locally in your browser for mask painting, preview, and export.",
+      "purupuru maker processes uploaded images locally in your browser for mask painting, preview, and export.",
     sections: [
       {
         title: "Short answer",
@@ -386,7 +386,7 @@ const faqPages: Record<string, FaqPageContent> = {
       {
         title: "What stays local",
         body:
-          "The selected image file, painted mask, preview canvas, and exported media are handled by browser APIs on your device. They are not sent to a purupurumaker server by the app code.",
+          "The selected image file, painted mask, preview canvas, and exported media are handled by browser APIs on your device. They are not sent to a purupuru maker server by the app code.",
       },
       {
         title: "What a website request can still include",
@@ -408,7 +408,7 @@ function normalizePath(path: string) {
 
 function FaqPage({ page }: { page: FaqPageContent }) {
   useEffect(() => {
-    document.title = `${page.title} - purupurumaker FAQ`;
+    document.title = `${page.title} - purupuru maker FAQ`;
     const description = document.querySelector<HTMLMetaElement>('meta[name="description"]');
     if (description) description.content = page.description;
   }, [page]);
