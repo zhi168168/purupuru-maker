@@ -699,6 +699,29 @@ select {
   background: rgba(42, 211, 173, 0.14);
 }
 
+.footer-badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 16px 18px;
+  padding: 24px 20px;
+  border-top: 1px solid rgba(20, 33, 29, 0.14);
+}
+
+.footer-badges a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+}
+
+.footer-badges img {
+  display: block;
+  max-width: min(100%, 256px);
+  height: auto;
+}
+
 .legal-footer {
   display: flex;
   align-items: center;
