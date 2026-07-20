@@ -1,9 +1,11 @@
 import { EditorActions } from "./EditorActions";
 import type { AppMode } from "../types";
+import { localizePath, type Locale, uiText } from "../i18n";
 
 type TopBarProps = {
   variant?: "tool" | "page";
   mode?: AppMode;
+  locale?: Locale;
   hasImage?: boolean;
   isExporting?: boolean;
   onUploadClick?: () => void;
@@ -14,6 +16,7 @@ type TopBarProps = {
 export function TopBar({
   variant = "tool",
   mode,
+  locale = "en",
   hasImage = false,
   isExporting = false,
   onUploadClick,
@@ -21,6 +24,7 @@ export function TopBar({
   onExport,
 }: TopBarProps) {
   const activeSection = getActiveSection();
+  const labels = uiText[locale];
 
   return (
     <header className="topbar">
@@ -34,8 +38,8 @@ export function TopBar({
       </div>
 
       <nav className="site-nav" aria-label="Primary navigation">
-        <a className={activeSection === "home" ? "active" : ""} href="/">
-          Start
+        <a className={activeSection === "home" ? "active" : ""} href={localizePath("/", locale)}>
+          {labels.navStart}
         </a>
         <div className="nav-dropdown">
           <button
@@ -43,17 +47,17 @@ export function TopBar({
             type="button"
             aria-haspopup="true"
           >
-            FAQ
+            {labels.navFaq}
           </button>
           <div className="nav-menu" role="menu">
-            <a href="/what-is-purupuru-maker/" role="menuitem">
-              What is purupuru maker?
+            <a href={localizePath("/what-is-purupuru-maker/", locale)} role="menuitem">
+              {labels.faqWhat}
             </a>
-            <a href="/how-to-use-purupuru-maker/" role="menuitem">
-              How to use purupuru maker?
+            <a href={localizePath("/how-to-use-purupuru-maker/", locale)} role="menuitem">
+              {labels.faqHow}
             </a>
-            <a href="/are-my-images-uploaded/" role="menuitem">
-              Are my images uploaded?
+            <a href={localizePath("/are-my-images-uploaded/", locale)} role="menuitem">
+              {labels.faqImages}
             </a>
           </div>
         </div>
@@ -63,14 +67,14 @@ export function TopBar({
             type="button"
             aria-haspopup="true"
           >
-            Terms
+            {labels.navTerms}
           </button>
           <div className="nav-menu" role="menu">
             <a href="/terms.html" role="menuitem">
-              Terms
+              {labels.terms}
             </a>
             <a href="/privacy.html" role="menuitem">
-              Privacy
+              {labels.privacy}
             </a>
           </div>
         </div>
@@ -81,6 +85,8 @@ export function TopBar({
           mode={mode}
           hasImage={hasImage}
           isExporting={isExporting}
+          locale={locale}
+          labels={labels}
           onUploadClick={onUploadClick}
           onSetMode={onSetMode}
           onExport={onExport}

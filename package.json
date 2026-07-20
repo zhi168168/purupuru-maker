@@ -4,6 +4,8 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
+    "generate:locales": "node scripts/generate-localized-pages.mjs",
+    "prebuild": "npm run generate:locales",
     "dev": "vite --host 0.0.0.0",
     "build": "tsc -p tsconfig.json && tsc -p tsconfig.node.json && vite build",
     "preview": "vite preview --host 0.0.0.0"

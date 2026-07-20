@@ -11,6 +11,7 @@ type WorkspaceProps = {
   brush: BrushSettings;
   renderCanvas: HTMLCanvasElement | null;
   disabled: boolean;
+  emptyUploadLabel: string;
   maskVersion: number;
   onMaskChanged: () => void;
   onUploadClick: () => void;
@@ -24,6 +25,7 @@ export function Workspace({
   brush,
   renderCanvas,
   disabled,
+  emptyUploadLabel,
   maskVersion,
   onMaskChanged,
   onUploadClick,
@@ -163,7 +165,7 @@ export function Workspace({
     >
       {!image && (
         <button type="button" className="empty-state" onClick={onUploadClick}>
-          <span>Upload a PNG, JPEG, or WebP image</span>
+          <span>{emptyUploadLabel}</span>
         </button>
       )}
 

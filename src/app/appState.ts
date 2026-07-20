@@ -18,6 +18,16 @@ export const defaultMotion: MotionSettings = {
   damping: 16,
   randomness: 0.2,
   direction: "both",
+  envelope: {
+    mode: "loop",
+    settleDuration: 2,
+    settleCurve: "smooth",
+    keyframes: [
+      { id: "start", time: 0, value: 1 },
+      { id: "peak", time: 0.35, value: 0.75 },
+      { id: "rest", time: 2, value: 0 },
+    ],
+  },
 };
 
 export const defaultExportSettings: ExportSettings = {

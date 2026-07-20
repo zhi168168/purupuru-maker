@@ -56,6 +56,20 @@ export type MotionSettings = {
   damping: number;
   randomness: number;
   direction: "both" | "x" | "y";
+  envelope: MotionEnvelope;
+};
+
+export type MotionEnvelope = {
+  mode: "loop" | "settle" | "custom";
+  settleDuration: number;
+  settleCurve: "smooth" | "bouncy" | "fast" | "linear";
+  keyframes: MotionKeyframe[];
+};
+
+export type MotionKeyframe = {
+  id: string;
+  time: number;
+  value: number;
 };
 
 export type ExportSettings = {

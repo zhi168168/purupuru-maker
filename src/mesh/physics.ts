@@ -26,8 +26,10 @@ export function updateMeshPhysics(
     height = Math.max(height, vertex.baseY);
   }
   const cellSize = Math.min(width / mesh.cols, height / mesh.rows);
-  const effectiveStrength = Math.min(settings.strength * 0.42, cellSize * 0.9);
-  const maxOffset = Math.max(1, Math.min(settings.strength * 0.55, cellSize * 1.15));
+  const envelopeAmount = getEnvelopeAmount(settings, time);
+  const timedStrength = settings.strength * envelopeAmount;
+  const effectiveStrength = Math.min(timedStrength * 0.42, cellSize * 0.9);
+  const maxOffset = Math.max(1, Math.min(timedStrength * 0.55, cellSize * 1.15));
 
   for (const vertex of mesh.vertices) {
     updateVertex(vertex, time, stableDt, settings, {
@@ -37,6 +39,39 @@ export function updateMeshPhysics(
       maxOffset,
     });
   }
+}
+
+function getEnvelopeAmount(settings: MotionSettings, time: number) {
+  const envelope = settings.envelope;
+  if (envelope.mode === "loop") return 1;
+
+  if (envelope.mode === "custom") {
+    const keyframes = [...envelope.keyframes].sort((a, b) => a.time - b.time);
+    if (keyframes.length === 0) return 1;
+    if (time <= keyframes[0].time) return clamp(keyframes[0].value, 0, 1.5);
+    for (let index = 1; index < keyframes.length; index += 1) {
+      const previous = keyframes[index - 1];
+      const next = keyframes[index];
+      if (time <= next.time) {
+        const span = Math.max(0.001, next.time - previous.time);
+        const progress = clamp((time - previous.time) / span, 0, 1);
+        const eased = progress * progress * (3 - 2 * progress);
+        return clamp(previous.value + (next.value - previous.value) * eased, 0, 1.5);
+      }
+    }
+    return clamp(keyframes[keyframes.length - 1].value, 0, 1.5);
+  }
+
+  const duration = Math.max(0.1, envelope.settleDuration);
+  const progress = clamp(time / duration, 0, 1);
+  if (envelope.settleCurve === "linear") return 1 - progress;
+  if (envelope.settleCurve === "fast") return Math.pow(1 - progress, 2.35);
+  if (envelope.settleCurve === "bouncy") {
+    const decay = Math.pow(1 - progress, 2.1);
+    const rebound = Math.abs(Math.sin(progress * Math.PI * 4.5)) * 0.22 * (1 - progress);
+    return clamp(decay + rebound, 0, 1);
+  }
+  return 1 - progress * progress * (3 - 2 * progress);
 }
 
 type MotionFrame = {

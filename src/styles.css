@@ -300,6 +300,190 @@ input:disabled {
   color: #17211f;
 }
 
+.motion-envelope {
+  display: grid;
+  gap: 12px;
+  border-radius: 8px;
+  padding: 12px;
+  background:
+    linear-gradient(180deg, rgba(42, 211, 173, 0.09), rgba(255, 255, 255, 0.035)),
+    #151a1a;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.control-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  color: #d8e7e2;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.control-heading strong {
+  color: #72e2c8;
+  font-size: 12px;
+  font-weight: 760;
+}
+
+.motion-mode-toggle {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 4px;
+  padding: 4px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.motion-mode-toggle button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  min-width: 0;
+  min-height: 32px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: #b5c5c0;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 720;
+  transition:
+    background 150ms ease,
+    color 150ms ease,
+    transform 150ms ease;
+}
+
+.motion-mode-toggle button:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+}
+
+.motion-mode-toggle button:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.motion-mode-toggle button.active {
+  background: #edf4f1;
+  color: #17211f;
+}
+
+.envelope-preview {
+  display: grid;
+  gap: 4px;
+  min-height: 98px;
+  border-radius: 8px;
+  padding: 10px 10px 8px;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    rgba(7, 14, 13, 0.62);
+  background-size: 20px 20px;
+}
+
+.envelope-preview svg {
+  display: block;
+  width: 100%;
+  height: 68px;
+}
+
+.envelope-preview line {
+  stroke: rgba(237, 244, 241, 0.22);
+  stroke-width: 1.5;
+}
+
+.envelope-preview polyline {
+  fill: none;
+  stroke: #2ad3ad;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 4;
+  filter: drop-shadow(0 4px 10px rgba(42, 211, 173, 0.18));
+}
+
+.envelope-caption {
+  display: flex;
+  justify-content: space-between;
+  color: #899b95;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.envelope-options {
+  display: grid;
+  gap: 12px;
+}
+
+.keyframe-list {
+  display: grid;
+  gap: 8px;
+}
+
+.keyframe-row {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr) minmax(0, 1fr) 34px;
+  align-items: end;
+  gap: 8px;
+}
+
+.keyframe-row > span {
+  align-self: center;
+  color: #72e2c8;
+  font-size: 12px;
+  font-weight: 760;
+}
+
+.keyframe-row label {
+  display: grid;
+  gap: 4px;
+  color: #9eb0aa;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.keyframe-row input {
+  min-width: 0;
+  min-height: 34px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 6px;
+  padding: 0 8px;
+  background: #1b2020;
+  color: #edf4f1;
+  font-variant-numeric: tabular-nums;
+}
+
+.keyframe-delete {
+  display: inline-grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.045);
+  color: #aebfba;
+  cursor: pointer;
+  transition:
+    background 150ms ease,
+    color 150ms ease,
+    transform 150ms ease;
+}
+
+.keyframe-delete:hover:not(:disabled) {
+  background: rgba(255, 170, 165, 0.12);
+  color: #ffd9d9;
+}
+
+.keyframe-delete:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.keyframe-add {
+  min-height: 34px;
+  justify-self: stretch;
+}
+
 .editor-actions .segmented button.preview-mode {
   border-color: transparent;
   background: #2ad3ad;
@@ -338,6 +522,13 @@ input:disabled {
   margin: 0;
   padding: 0;
   border: 0;
+}
+
+.language-select select {
+  min-height: 40px;
+  width: 132px;
+  padding-right: 8px;
+  font-weight: 700;
 }
 
 .editor-actions .button,
@@ -792,6 +983,20 @@ select {
   line-height: 1.45;
 }
 
+.field-note {
+  margin: 0;
+  color: #8ea29b;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.field-warning {
+  margin: 0;
+  color: #ffc9a8;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
 progress {
   width: 100%;
   height: 10px;
@@ -869,6 +1074,14 @@ progress {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     justify-self: stretch;
     gap: 8px;
+  }
+
+  .language-select {
+    grid-column: 1 / -1;
+  }
+
+  .language-select select {
+    width: 100%;
   }
 
   .editor-actions .button,

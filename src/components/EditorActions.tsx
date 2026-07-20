@@ -1,10 +1,19 @@
 import { Download, ImagePlus, Paintbrush, Play } from "lucide-react";
 import type { AppMode } from "../types";
+import { getLocalizedCurrentPath, locales, type Locale } from "../i18n";
 
 type EditorActionsProps = {
   mode: AppMode;
   hasImage: boolean;
   isExporting: boolean;
+  locale: Locale;
+  labels: {
+    upload: string;
+    replace: string;
+    paint: string;
+    preview: string;
+    export: string;
+  };
   onUploadClick: () => void;
   onSetMode: (mode: "paint" | "preview") => void;
   onExport: () => void;
@@ -14,15 +23,34 @@ export function EditorActions({
   mode,
   hasImage,
   isExporting,
+  locale,
+  labels,
   onUploadClick,
   onSetMode,
   onExport,
 }: EditorActionsProps) {
   return (
     <section className="editor-actions" aria-label="Editor actions">
+      <label className="language-select">
+        <span className="visually-hidden">Language</span>
+        <select
+          value={locale}
+          disabled={isExporting}
+          onChange={(event) => {
+            window.location.href = getLocalizedCurrentPath(event.target.value as Locale);
+          }}
+        >
+          {locales.map((item) => (
+            <option key={item.code} value={item.code}>
+              {item.label}
+            </option>
+          ))}
+        </select>
+      </label>
+
       <button type="button" className="button" onClick={onUploadClick} disabled={isExporting}>
         <ImagePlus size={18} />
-        {hasImage ? "Replace" : "Upload"}
+        {hasImage ? labels.replace : labels.upload}
       </button>
 
       <div className="segmented" aria-label="Mode">
@@ -34,7 +62,7 @@ export function EditorActions({
           aria-pressed={mode === "paint"}
         >
           <Paintbrush size={17} />
-          Paint
+          {labels.paint}
         </button>
         <button
           type="button"
@@ -44,7 +72,7 @@ export function EditorActions({
           aria-pressed={mode === "preview"}
         >
           <Play size={17} />
-          Preview
+          {labels.preview}
         </button>
       </div>
 
@@ -55,7 +83,7 @@ export function EditorActions({
         onClick={onExport}
       >
         <Download size={18} />
-        Export
+        {labels.export}
       </button>
     </section>
   );
